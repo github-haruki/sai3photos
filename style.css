@@ -1,0 +1,309 @@
+html{scroll-behavior: smooth;}
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-text-size-adjust: 100%;
+}
+
+a{
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a:hover,
+a:active{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.photo_container{
+    width: 100%;
+    padding: 60px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photos{
+    width: 90vw;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {  
+    .header_icon{
+        width:140px;
+        top: 15px;
+        left: 15px;
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        z-index: 904;
+    }
+
+    .header{
+        position: fixed;
+        width: 100%;
+        min-height: 60px;
+        border-bottom: 2px solid rgb(212, 212, 212);
+        background-color: white;
+        z-index: 903;
+    }
+
+    .justbackground{
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        z-index: 902;
+    }
+
+    /*　ハンバーガーボタン　*/
+    .hamburger {
+        display : block;
+        position: fixed;
+        z-index : 903;
+        right : 13px;
+        top   : 12px;
+        width : 42px;
+        height: 42px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .hamburger span {
+        display : block;
+        position: absolute;
+        width   : 30px;
+        height  : 2px ;
+        left    : 6px;
+        background : #555;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition   : 0.3s ease-in-out;
+        transition        : 0.3s ease-in-out;
+    }
+    .hamburger span:nth-child(1) {
+        top: 10px;
+    }
+    .hamburger span:nth-child(2) {
+        top: 20px;
+    }
+    .hamburger span:nth-child(3) {
+        top: 30px;
+    }
+    
+    /* ナビ開いてる時のボタン */
+    .hamburger.active span:nth-child(1) {
+        top : 16px;
+        left: 6px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform   : rotate(-45deg);
+        transform        : rotate(-45deg);
+    }
+    
+    .hamburger.active span:nth-child(2),
+    .hamburger.active span:nth-child(3) {
+        top: 16px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform   : rotate(45deg);
+        transform        : rotate(45deg);
+    }
+
+
+    nav.hamburger_list {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        position: fixed;
+        z-index : 901;
+        top  : 60px;
+        left : 0;
+        color: #000;
+        background: white;
+        text-align: left;
+        transform: translateY(-150%);
+        transition: all 0.6s;
+        width: 100%;
+        height: 160px;
+    }
+      
+    /* このクラスを、jQueryで付与・削除する */
+    nav.hamburger_list.active {
+        transform: translateY(0%);
+    }
+
+    nav.hamburger_list h1{
+        font-family: 'Hind', sans-serif;
+        font-size: 15px;
+        padding: 0 24px;
+        line-height: 25px;
+        letter-spacing: 1.7px;
+    }
+
+    nav.hamburger_list a{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .header_icon{
+        width:140px;
+        margin-top: 22px;
+        margin-left: 22px;
+    }
+    
+    .header{
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid rgb(212, 212, 212);
+        position: fixed;
+        top: 0px;
+        background: white;
+        z-index: 999;
+    }
+
+    nav.hamburger_list{
+        width: 50vw;
+        height: 5.2vw;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        position:absolute;
+        right:0.8vw;
+        top: 0;
+        font-size: 0;
+    }
+
+    nav.hamburger_list h1{
+        text-align:center;
+        display:inline-block;
+        font-family: 'Hind', sans-serif;
+        font-size: 16px;
+        padding:0;
+        line-height: 80px;
+        letter-spacing: 1.7px;
+    }
+
+    nav.hamburger_list a{
+        text-decoration: none;
+        color:black;
+    }
+
+    .header_home{
+        width: 90px;
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        right: 300px;
+    }
+
+    .header_home::after {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 1.2px;
+        background: #333;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform .3s;
+        transform: scale(0, 1); /* homeなので*/
+    }
+
+    .header_home:hover::after {
+        transform: scale(1, 1);
+    }
+
+    .header_contents{
+        width: 98px;
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        right: 202px;
+    }
+
+    .header_contents::after {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 1.2px;
+        background: #333;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform .3s;
+    }
+
+    .header_contents:hover::after {
+        transform: scale(1, 1);
+    }
+    
+    .header_articles{
+        width: 109px;
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        right: 93px;
+    }
+
+    .header_articles::after {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 1.2px;
+        background: #333;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform .3s;
+    }
+
+    .header_articles:hover::after {
+        transform: scale(1, 1);
+    }
+    
+    .header_about{
+        width: 93px;
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        right: 0px;
+    }
+
+    .header_about::after {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 1.2px;
+        background: #333;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform .3s;
+    }
+
+    .header_about:hover::after {
+        transform: scale(1, 1);
+    }
+}
