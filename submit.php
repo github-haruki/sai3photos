@@ -14,6 +14,7 @@
         <option>水谷海斗</option>
         <option>大久保</option>
         <option>林春輝</option>
+    </select>
     <input type="submit" name="submit" value="Upload">
     </form>
     <div>
