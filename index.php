@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="photo_container">
-        <?php
+            <?php
             // データベース設定ファイルを含む
             include 'dbConfig.php';
             // データベースから画像を取得する
@@ -33,11 +33,30 @@
             if($query->num_rows > 0){
                 while($row = $query->fetch_assoc()){
                     $imageURL = 'uploads/'.$row["file_name"];
+                    $imageName = $row["file_name"];
+                    $photographer = $row["photographer"];
+                    $hr = $row["hr"];
+                    $place = $row["place"];
+                    $date = $row["uploaded_on"];
+                    
             ?>
 
-            <img src="<?php echo $imageURL; ?>" alt="" class="photos">
+            <a href="#" onclick="click(<?= json_encode($imageName) ?>);"><img src="<?php echo $imageURL; ?>" alt="" class="photos"></a>
 
             <?php } }else{} ?>
         </div>
+        <div id="popup">
+            <img src="">
+            <h2></h2>
+            <p></p>
+        </div>
+        </div id="blank"></div>
+        <script>
+            function click(imageName){
+                document.getElementById("popup").style.display="block";
+                console.log("hello");
+                return;
+            }
+        </script>
     </body>
 </html>

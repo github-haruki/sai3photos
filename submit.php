@@ -9,7 +9,6 @@
     <form action="upload.php" method="post" enctype="multipart/form-data">
     アップロードする画像ファイルを選択する:
     <input type="file" name="file">
-    <input type="text" name="hr">
     <select name="photographer">
         <option>水谷海斗</option>
         <option>大久保</option>

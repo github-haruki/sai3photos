@@ -10,7 +10,6 @@ $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 //変数設定
-$hr	= $_POST['hr'];
 $photographer= $_POST['photographer'];
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
@@ -20,7 +19,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
         // サーバーにファイルをアップロード
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
             // データベースに画像ファイル名を挿入
-            $insert = $db->query("INSERT into images (file_name, hr, photographer, uploaded_on) VALUES ('".$fileName."', '".$hr."', '".$photographer."', NOW())");
+            $insert = $db->query("INSERT into images (file_name, photographer, uploaded_on) VALUES ('".$fileName."', '".$photographer."', NOW())");
             if($insert){
                 $statusMsg = " ".$fileName. " が正常にアップロードされました";
             }else{

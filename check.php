@@ -3,9 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>写真共有システム/承認フォーム</title>
         <link rel="stylesheet" href="check.css">
     </head>
     <body>
+        <div class="header">
+            <a href="index.html"><img class="header_icon" src="header.png" alt="sai3 icon"></a>
+            <h1><span class="slash">/</span> 写真共有システム承認フォーム</h1>
+        </div>
+        
         <div class="flex-container">
             <?php
             // データベース設定ファイルを含む
@@ -18,12 +24,32 @@
                     $imageURL = 'uploads/'.$row["file_name"];
                     $imageName = $row["file_name"];
             ?>
-            <div id="box">
-                <img src="<?php echo $imageURL; ?>" alt="" class="photos">
-                <form class="form" action="update.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="filename" value="<?php echo $imageName; ?>" />
-                <p>HR: </p><input type="text" name="hr"></br>
-                <p>撮影場所: </p><select name="place">
+                <iframe id="iframe" srcdoc="
+                <style>
+                .photos{
+                    height: 250px;
+                    display: inline-block;
+                }
+
+                form{
+                    display: inline-block;
+                }
+
+                input{
+                    display: inline-block;
+                }
+
+                p{
+                    padding: 0;
+                    margin:0;
+                    display: inline-block;
+                }
+                </style>
+                <img src=&quot;<?php echo $imageURL; ?>&quot; class=&quot;photos&quot;>
+                <form class=&quot;form&quot; action=&quot;update.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;>
+                <input type=&quot;hidden&quot; name=&quot;filename&quot; value=&quot;<?php echo $imageName; ?>&quot; />
+                <p>HR: </p><input type=&quot;text&quot; name=&quot;hr&quot;></br>
+                <p>撮影場所: </p><select name=&quot;place&quot;>
                     <option>校内</option>
                     <option>体育館</option>
                     <option>運動場</option>
@@ -31,10 +57,11 @@
                     <option>部展</option>
                     <option>クラス展</option>
                 </select></br>
-                <input type="submit" name="submit" value="Upload">
-                </form>
-            </div>
+                <input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Upload&quot;>
+                </form>"></iframe>
+                
             <?php } }else{} ?>
         </div>
+        <p>承認待ちのレコードは以上です。</p>
     </body>
 </html>

@@ -148,6 +148,15 @@ a:active{
         text-decoration: none;
         color: black;
     }
+
+    #popup{
+        display: none;
+        background-color: black;
+        width: 90vw;
+        height: 70vh;
+        z-index: 10;
+    }
+
 }
 
 @media only screen and (min-width: 601px) {
