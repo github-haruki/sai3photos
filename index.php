@@ -46,32 +46,37 @@
                     
             ?>
 
-            <a href="javascript:click(<?php json_encode($imageName).",".json_encode($photographer) ?>);" ><img src="<?php echo $imageURL; ?>" alt="" class="photos"></a>
+            <a href="javascript:click('<?php echo $imageName ?>', '<?php echo $photographer ?>', '<?php echo $date ?>', '<?php echo $place ?>', '<?php echo $hr ?>');" ><img src="<?php echo $imageURL; ?>" alt="" class="photos"></a>
 
             <?php } }else{} ?>
         </div>
         <div id="popup">
             <img src="" id="popup_image">
             <h2 id="popup_subtitle">撮影者</h2>
-            <p id="popup_photographer"></p>
+            <p id="popup_photographer">未設定</p>
             <h2 id="popup_subtitle">撮影日時</h2>
-            <p id="popup_photographer">New text!</p>
+            <p id="popup_date">未設定</p>
             <h2 id="popup_subtitle">撮影場所</h2>
-            <p id="popup_photographer">New text!</p>
+            <p id="popup_place">未設定!</p>
             <h2 id="popup_subtitle">その他区分</h2>
-            <p id="popup_photographer">New text!</p>
+            <p id="popup_other">未設定</p>
         </div>
-        <div id="blank"></div>
+        <a href="javascript:close()"><div id="blank"></div></a>
         <script>
-            function click(imageName,photogrpher){
+            function click(imageName, photographer, date, place, hr){
                 document.getElementById("popup").style.display="block";
                 document.getElementById("blank").style.display="block";
-                document.getElementById("popup_image").src="<?php echo $imageURL; ?>";
+                document.getElementById("popup_image").src="uploads/"+imageName;
                 document.getElementById("popup_photographer").innerHTML = photographer;
-                document.getElementById("popup_photographer").innerHTML = "New text!";
-                document.getElementById("popup_photographer").innerHTML = "New text!";
-                document.getElementById("popup_photographer").innerHTML = "New text!";
+                document.getElementById("popup_date").innerHTML = date;
+                document.getElementById("popup_place").innerHTML = place;
+                document.getElementById("popup_other").innerHTML = hr;
                 return;
+            }
+
+            function close(){
+                document.getElementById("popup").style.display="none";
+                document.getElementById("blank").style.display="none";
             }
         </script>
     </body>

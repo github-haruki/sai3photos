@@ -178,7 +178,7 @@ a:active{
 
     #popup_image{
         width: 90vw;
-        margin-bottom: 18px;
+        margin: 16px 0 18px;
     }
 
     #popup_subtitle{
@@ -188,7 +188,7 @@ a:active{
         font-weight: 500;
     }
 
-    #popup_photographer{
+    #popup_photographer, #popup_date, #popup_place, #popup_other{
         font-size: 14px;
         margin: 0px 28px;
         font-family: 'Noto Sans JP', sans-serif;
