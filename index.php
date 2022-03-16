@@ -70,6 +70,9 @@
                 document.getElementById("popup_photographer").innerHTML = photographer;
                 document.getElementById("popup_date").innerHTML = date;
                 document.getElementById("popup_place").innerHTML = place;
+                if(hr=='0'){
+                    hr = "該当なし";
+                }
                 document.getElementById("popup_other").innerHTML = hr;
                 return;
             }
