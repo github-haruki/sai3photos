@@ -112,6 +112,9 @@
                 if( 20 < (startY - endY) ) {
                     document.getElementById("popup").style.display="none";
                     document.getElementById("blank").style.display="none";
+                } else if(20 < (endY - startY)) {
+                    document.getElementById("popup").style.display="none";
+                    document.getElementById("blank").style.display="none";
                 } else {
                 }
             }
@@ -144,7 +147,10 @@
                 if( 50 < (startY - endY) ) {
                     document.getElementById("popup").style.display="none";
                     document.getElementById("blank").style.display="none";
-                } else {
+                } else if(50 < (endY - startY)) {
+                    document.getElementById("popup").style.display="none";
+                    document.getElementById("blank").style.display="none";
+                }else{
                 }
             }
         </script>

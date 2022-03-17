@@ -162,10 +162,11 @@ a:active{
         border: none;
         border-radius: 7px;
         width: 88vw;
-        height: 530px;
+        min-height: 530px;
+        height: 80vh;
         z-index: 10;
         position: fixed;
-        top: 20px;
+        top: 5vh;
         left: 6vw;
         overflow: hidden;
     }
