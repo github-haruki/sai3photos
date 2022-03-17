@@ -23,16 +23,20 @@ a:active{
 .photo_container{
     width: 100%;
     padding: 60px 0 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .photos{
-    width: 90vw;
-    border-radius: 20px;
+    width: 32vw;
+    border-radius: 2px;
     border: none;
-    padding: 5px;
+    padding: 0.5px;
+    margin: 0;
 }
 
 @media only screen and (max-width: 600px) {  
@@ -43,16 +47,16 @@ a:active{
         position: fixed;
         padding: 0;
         margin: 0;
-        z-index: 904;
+        z-index: 8;
     }
 
     .header{
         position: fixed;
         width: 100%;
-        min-height: 60px;
+        height: 60px;
         border-bottom: 2px solid rgb(212, 212, 212);
         background-color: white;
-        z-index: 903;
+        z-index: 7;
     }
 
     .justbackground{
@@ -60,7 +64,7 @@ a:active{
         width: 100%;
         height: 60px;
         background-color: white;
-        z-index: 902;
+        z-index: 6;
     }
 
     /*　ハンバーガーボタン　*/
@@ -154,13 +158,12 @@ a:active{
         background-color: white;
         border: none;
         border-radius: 7px;
-        width: 90vw;
-        height: 80vh;
-        max-height: 600px;
+        width: 88vw;
+        height: 530px;
         z-index: 10;
         position: fixed;
-        top: 10vh;
-        left: 5vw;
+        top: 20px;
+        left: 6vw;
         overflow: hidden;
     }
 
@@ -179,14 +182,15 @@ a:active{
 
     #popup_image{
         width: 90vw;
-        margin: 16px 0 18px;
+        margin: 16px 0 12px;
     }
 
     #popup_subtitle{
-        font-size: 16px;
-        margin: 10px 28px;
+        font-size: 15.5px;
+        margin: 11px 28px;
         font-family: 'Noto Sans JP', sans-serif;
         font-weight: 500;
+        line-height: 16px;
     }
 
     #popup_photographer, #popup_date, #popup_place, #popup_other{

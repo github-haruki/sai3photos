@@ -81,6 +81,72 @@
                 document.getElementById("popup").style.display="none";
                 document.getElementById("blank").style.display="none";
             }
+
+            var startY = null;
+            var endY = null;
+
+            window.addEventListener('load', function(){
+                // スワイプ／フリック
+                document.getElementById("blank").addEventListener('touchmove', logSwipe);
+                // タッチ開始
+                document.getElementById("blank").addEventListener('touchstart', logSwipeStart);
+                // タッチ終了
+                document.getElementById("blank").addEventListener('touchend', logSwipeEnd);
+            });
+
+            function logSwipeStart(event) {
+                    event.preventDefault();
+
+                    startY = event.touches[0].pageY;
+            }
+
+            function logSwipe(event) {
+                event.preventDefault();
+
+                endY = event.touches[0].pageY;
+            }
+
+            function logSwipeEnd(event) {
+                event.preventDefault();
+
+                if( 20 < (startY - endY) ) {
+                    document.getElementById("popup").style.display="none";
+                    document.getElementById("blank").style.display="none";
+                } else {
+                }
+            }
+
+
+            window.addEventListener('load', function(){
+                // スワイプ／フリック
+                document.getElementById("popup").addEventListener('touchmove', logSwipe1);
+                // タッチ開始
+                document.getElementById("popup").addEventListener('touchstart', logSwipeStart1);
+                // タッチ終了
+                document.getElementById("popup").addEventListener('touchend', logSwipeEnd1);
+            });
+
+            function logSwipeStart1(event) {
+                    event.preventDefault();
+
+                    startY = event.touches[0].pageY;
+            }
+
+            function logSwipe1(event) {
+                event.preventDefault();
+
+                endY = event.touches[0].pageY;
+            }
+
+            function logSwipeEnd1(event) {
+                event.preventDefault();
+
+                if( 50 < (startY - endY) ) {
+                    document.getElementById("popup").style.display="none";
+                    document.getElementById("blank").style.display="none";
+                } else {
+                }
+            }
         </script>
     </body>
 </html>
